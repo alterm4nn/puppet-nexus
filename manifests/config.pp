@@ -34,10 +34,10 @@ class nexus::config(
     # {karaf.data}/etc/nexus.properties where {karaf.data} is the work dir
     $conf_path = 'etc/nexus.properties'
     $nexus_properties_file = "${nexus_work_dir}/${conf_path}"
-  }
-  elsif versioncmp($version, '3.0.0') >= 0 {
-    $conf_path = 'etc/org.sonatype.nexus.cfg'
-    $nexus_properties_file = "${nexus_root}/${nexus_home_dir}/${conf_path}"
+#  }
+#  elsif versioncmp($version, '3.0.0') >= 0 {
+#    $conf_path = 'etc/org.sonatype.nexus.cfg'
+#    $nexus_properties_file = "${nexus_root}/${nexus_home_dir}/${conf_path}"
   } else {
     $conf_path = 'conf/nexus.properties'
     $nexus_properties_file = "${nexus_root}/${nexus_home_dir}/${conf_path}"
