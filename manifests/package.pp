@@ -76,7 +76,8 @@ class nexus::package (
   }
   
   file { $nexus_root:
-    ensure => 'directory'
+    ensure => 'directory',
+    before      => Exec['nexus-untar'],
   }
 
   exec{ 'nexus-untar':
