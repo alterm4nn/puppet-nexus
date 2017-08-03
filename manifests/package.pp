@@ -74,6 +74,10 @@ class nexus::package (
     source_hash => $md5sum,
     before      => Exec['nexus-untar'],
   }
+  
+  file { $nexus_root:
+    ensure => 'directory'
+  }
 
   exec{ 'nexus-untar':
     command => "tar zxf ${download_folder}/${nexus_archive} --directory ${nexus_root}",
